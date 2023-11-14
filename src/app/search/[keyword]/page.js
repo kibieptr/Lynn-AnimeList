@@ -9,7 +9,7 @@ const Page = async ({ params }) => {
   return (
     <>
       <section>
-        <Header title={`Search Results For ${keyword}`} />
+        <Header title={`Search Results For : ${keyword}`} />
         <AnimeList api={searchAnime} />
       </section>
     </>
