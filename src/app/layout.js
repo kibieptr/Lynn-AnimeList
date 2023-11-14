@@ -6,7 +6,8 @@ const gabarito = Gabarito({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Lynn-Anime",
-  description: "Lynn Anime - Website Indonesia List Anime",
+  description: "Lynn Anime - Indonesian Website The most active online anime and manga community created by Kibieptr Inspired by Source Deaafrizal",
+  keywords: "anime, lynnanimelist, anime news, manga",
 };
 
 export default function RootLayout({ children }) {
