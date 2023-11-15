@@ -1,19 +1,29 @@
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/AnimeList/Header";
 
+const capitalizeEachWord = (string) => {
+  return string
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
 const Page = async ({ params }) => {
-  const { keyword } = params
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`)
-  const searchAnime = await response.json()
+  const { keyword } = params;
+  const decodedKeyword = decodeURI(keyword);
+  const Key = capitalizeEachWord(decodedKeyword);
+
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${decodedKeyword}`);
+  const searchAnime = await response.json();
 
   return (
     <>
       <section>
-        <Header title={`Search Results For : ${keyword}`} />
+        <Header title={`Search Results For: ${Key}`} />
         <AnimeList api={searchAnime} />
       </section>
     </>
   );
-}
+};  
 
-export default Page
+export default Page;
