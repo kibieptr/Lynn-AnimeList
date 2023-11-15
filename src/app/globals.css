@@ -38,7 +38,7 @@ img:hover{
       var(--c) 0 50%;
     background-size: 24px 24px;
     background-repeat: no-repeat;
-    animation: s2 1s infinite;
+    animation: s2 3s infinite;
 }
 
 .loader::before {
