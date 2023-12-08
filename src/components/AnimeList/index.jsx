@@ -4,7 +4,7 @@ import Link from "next/link"
 const AnimeList = ({ api }) => {
     return (
         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-6 px-4">
-            {api.data.map((anime, index) => {
+            {api.data?.map((anime, index) => {
                 return (
                     <Link href={`/${anime.mal_id}`} className="cursor-pointer text-color-primary hover:text-color-oceandark transition-all" key={index}>
                         <Image
@@ -12,7 +12,7 @@ const AnimeList = ({ api }) => {
                             alt="..."
                             width={350}
                             height={150}
-                            className="w-full max-h-64 object-cover"
+                            className="w-full max-h-72 rounded-lg"
                         />
                         <h3 className="font-bold md:text-sm text-xs p-4">{anime.title}</h3>
                     </Link>
