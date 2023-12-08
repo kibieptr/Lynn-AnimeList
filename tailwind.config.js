@@ -20,7 +20,9 @@ module.exports = {
         secondary: '#393e46',
         dark: '#222831',
         legible: '#f67828',
-        oceandark: '#5dade2'
+        oceandark: '#5dade2',
+        darknav: '#08232f',
+        accentdark: '#e3aa1b',
       }
     }
   },
