@@ -22,7 +22,7 @@ const Page = () => {
 
     return (
         <>
-            <HeaderMenu title={"Anime Popular"} />
+            <HeaderMenu title={`Anime Popular #${page}`} />
             <AnimeList api={topAnime} />
             <Pagination page={page} lastPage={topAnime.pagination?.last_visible_page} setPage={setPage} />
         </>

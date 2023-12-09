@@ -23,14 +23,14 @@ const InputSearch = () => {
         <div className="relative">
             <input
                 placeholder="Search Anime"
-                className="w-full p-1 rounded"
+                className="w-full p-1 border border-solid rounded-lg"
                 ref={searchRef}
-                onKeyDown={handleSearch} />
+                onKeyDown={handleSearch}
+            />
             <button className="absolute top-1 end-2" onClick={handleSearch}>
                 <MagnifyingGlass size={24} />
             </button>
         </div>
     )
 }
-
 export default InputSearch

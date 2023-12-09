@@ -8,7 +8,7 @@ const AnimeList = ({ api }) => {
                 const truncatedTitle = anime.title.length > 14 ? anime.title.slice(0, 14) + '...' : anime.title;
 
                 return (
-                    <Link href={`/${anime.mal_id}`} className="cursor-pointer text-color-primary hover:text-color-oceandark transition-all" key={index}>
+                    <Link href={`/${anime.mal_id}`} className="cursor-pointer text-color-primary hover:text-color-accentdark transition-all" key={index}>
                         <div className="relative">
                             <Image
                                 src={anime.images.webp.image_url}
@@ -18,7 +18,7 @@ const AnimeList = ({ api }) => {
                                 className="w-[130px] h-[200px] rounded-[20px] transition-transform duration-300 transform hover:translate-y-[-5px]"
                             />
                         </div>
-                        <h3 className="font-bold md:text-sm text-xs p-4">{truncatedTitle}</h3>
+                        <h1 className="font-bold md:text-sm text-xl p-4">{truncatedTitle}</h1>
                     </Link>
                 );
             })}

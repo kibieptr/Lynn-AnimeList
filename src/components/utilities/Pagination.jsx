@@ -36,7 +36,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
             <p>{page} of {lastPage}</p>
 
             <button onClick={handleNextPage}
-                tyle={{
+                style={{
                     //glassmorphism
                     boxShadow: '0 8px 32px 0 rgba( 31, 38, 100, 0.69 )',
                     backdropFilter: 'blur(10px)',
