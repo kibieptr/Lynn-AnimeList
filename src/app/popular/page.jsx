@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import HeaderMenu from "@/components/utilities/HeaderMenu";
 import Pagination from "@/components/utilities/Pagination";
 import AnimeList from "@/components/AnimeList";
+import { getAnimeResponse } from "../libs/api";
 
 const Page = () => {
 
@@ -11,9 +12,10 @@ const Page = () => {
     const [topAnime, setTopAnime] = useState([])
 
     const fetchData = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?page=${page}`)
-        const data = await response.json()
-        setTopAnime(data)
+        // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?page=${page}`)
+        // const data = await response.json()
+        const PopularAnime = await getAnimeResponse("top/anime", `page${[page]}`)
+        setTopAnime(PopularAnime)
     }
 
     useEffect(() => {

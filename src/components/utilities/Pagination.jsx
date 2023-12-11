@@ -23,27 +23,29 @@ const Pagination = ({ page, lastPage, setPage }) => {
 
     return (
         <div className="flex justify-center items-center py-4 px-2 gap-4 text-color-primary">
-            <button onClick={handlePrevPage} disabled={page == 1}
-                style={{
-                    //glassmorphism
-                    boxShadow: '0 8px 32px 0 rgba( 31, 38, 100, 0.69 )',
-                    backdropFilter: 'blur(10px)',
-                }}
-                className="bg-color-oceandark py-2 px-2 rounded-lg transition-all">
-                <MdOutlineNavigateBefore className='text-white' />
-            </button>
+            {page <= 1 ? null :
+                <button onClick={handlePrevPage}
+                    style={{
+                        boxShadow: '0 8px 32px 0 rgba( 31, 38, 100, 0.69 )',
+                        backdropFilter: 'blur(10px)',
+                    }}
+                    className="bg-color-oceandark py-2 px-2 rounded-lg transition-all">
+                    <MdOutlineNavigateBefore className='text-white' />
+                </button>
+            }
 
             <p>{page} of {lastPage}</p>
 
-            <button onClick={handleNextPage}
-                style={{
-                    //glassmorphism
-                    boxShadow: '0 8px 32px 0 rgba( 31, 38, 100, 0.69 )',
-                    backdropFilter: 'blur(10px)',
-                }}
-                className="bg-color-oceandark py-2 px-2 rounded-lg transition-all">
-                <MdOutlineNavigateNext className='text-white' />
-            </button>
+            {page >= lastPage ? null :
+                <button onClick={handleNextPage}
+                    style={{
+                        boxShadow: '0 8px 32px 0 rgba( 31, 38, 100, 0.69 )',
+                        backdropFilter: 'blur(10px)',
+                    }}
+                    className="bg-color-oceandark py-2 px-2 rounded-lg transition-all">
+                    <MdOutlineNavigateNext className='text-white' />
+                </button>
+            }
         </div>
     )
 }
